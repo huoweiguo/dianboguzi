@@ -1,0 +1,317 @@
+<template>
+  <!--PC-->
+  <div class="index-container">
+    <div class="index-header">
+      <ul>
+        <li class="active">首页</li>
+        <li>新闻</li>
+        <li>联系我们</li>
+        <li>登录/注册</li>
+      </ul>
+    </div>
+
+    <div class="index-left">
+      <img src="../public/logo.png" alt="电波谷子" />
+      <img src="../public/iphone-download.png" alt="苹果下载" />
+      <img src="../public/andorid-download.png" alt="安卓下载" />
+
+      <div class="index-qrcode"></div>
+    </div>
+
+    <div class="index-texts">
+      <img src="../public/text1.png" alt="吃电子谷子" />
+      <img src="../public/text2.png" alt="享赛博人生" />
+    </div>
+
+    <div class="index-buttons">
+      <span>电子谷子</span>
+      <span>兑换码</span>
+    </div>
+  </div>
+
+  <!--mobile-->
+  <div class="index-m-container">
+    <div class="index-m-content">
+      <div class="index-m-menu">
+        <img src="../public/menu-silder.png" class="menu-silder" @click="hideSlider(true)" />
+
+        <div class="login-m">
+          <span>登录 | 注册</span>
+        </div>
+      </div>
+
+      <img src="../public/person.png" class="index-m-image" />
+    </div>
+
+    <!--menu mask-->
+    <div class="menu-mask" :class="showSlider ? 'slider-action' : ''">
+      <div class="menu-close"><img src="../public/close.png" @click="hideSlider(false)" /></div>
+      <ul class="menu-list">
+        <li v-for="item in mobileMenu" :key="item.intro">
+          <i>{{ item.title }}</i>
+          <span>{{ item.intro }}</span>
+          <div>{{ item.desc }}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+const count = ref<number>(5)
+const showSlider = ref<boolean>(false)
+
+const mobileMenu = reactive([
+  { title: '首页', intro: 'DIANBO GOODS', desc: '' },
+  { title: '概念展示', intro: 'CONCEPTS', desc: '谷子、谷模与谷美' },
+  { title: '新闻', intro: 'NEWS', desc: '线上与线下的最新活动' },
+  { title: '兑换码', intro: 'TOKENS', desc: '来兑换你最新获得的谷子吧' },
+  { title: '联系我们', intro: 'CUSTOMER SERVICE', desc: '让我们听到您的声音' }
+])
+
+useSeoMeta({
+  title: '电波谷子',
+  ogTitle: '回公司电话更多的是',
+  description: '这是一个新开发的游戏网站，游戏网站，游戏开发.20年开发游戏相关经验',
+  ogDescription: 'This is my amazing site, let me tell you all about it.',
+  ogImage: 'https://example.com/image.png',
+  twitterCard: 'summary_large_image'
+})
+
+const hideSlider = (status: boolean) => {
+  showSlider.value = status
+}
+</script>
+
+<style lang="scss" scope>
+.index-container {
+  width: 100%;
+  min-width: 1400px;
+  height: 100vh;
+  background: url('../public/person2.png') no-repeat center center;
+  .index-header {
+    position: fixed;
+    width: 100%;
+    min-width: 1400px;
+    top: 0.4rem;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 10;
+    ul {
+      display: flex;
+      li {
+        position: relative;
+        list-style: none;
+        font-size: 0.28rem;
+        width: 1.95rem;
+        text-align: center;
+        height: 0.5rem;
+        line-height: 0.5rem;
+        cursor: pointer;
+        &.active,
+        &:hover {
+          &::after {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            content: '';
+            width: 90%;
+            height: 0.18rem;
+            background-color: #c3b9ea;
+            opacity: 0.6;
+            z-index: -1;
+            border-radius: 0.09rem;
+          }
+        }
+        &:last-child {
+          margin-left: 2rem;
+        }
+      }
+    }
+  }
+  .index-left {
+    position: fixed;
+    left: 0.8rem;
+    top: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    img {
+      margin-bottom: 0.2rem;
+      &:first-child {
+        margin-bottom: 0.9rem;
+      }
+    }
+    .index-qrcode {
+      width: 2rem;
+      height: 2rem;
+      background-color: #aaa;
+      border-radius: 0.1rem;
+    }
+  }
+  .index-texts {
+    position: fixed;
+    right: 0.5rem;
+    top: 2rem;
+    img {
+      display: block;
+      margin: 0.1rem 0;
+      height: 0.5rem;
+      &:first-child {
+        margin-left: -0.8rem;
+      }
+    }
+  }
+  .index-buttons {
+    position: fixed;
+    bottom: 1rem;
+    left: 0;
+    width: 100%;
+    min-width: 1400px;
+    display: flex;
+    justify-content: center;
+    span {
+      display: block;
+      color: #71758d;
+      font-size: 0.36rem;
+      height: 0.5rem;
+      line-height: 0.5rem;
+      border: 0.04rem solid rgba(70, 81, 142, 0.4);
+      background-color: rgba(255, 255, 255, 0.65);
+      padding: 0.1rem 0;
+      width: 2rem;
+      text-align: center;
+      margin: 0 0.2rem;
+      cursor: pointer;
+      &:first-child {
+        border-radius: 0.25rem 0 0 0.25rem;
+      }
+      &:last-child {
+        border-radius: 0 0.25rem 0.25rem 0;
+      }
+    }
+  }
+}
+
+.index-m-container {
+  display: none;
+  padding-top: 0.5rem;
+  height: calc(100vh - 0.5rem);
+  width: 100%;
+  background-image: linear-gradient(90deg, #b2d6fa 12%, #f8d3f8);
+  .index-m-content {
+    padding: 0.2rem;
+    box-sizing: border-box;
+    .menu-silder {
+      display: block;
+      height: 0.28rem;
+    }
+    .index-m-menu {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 0.6rem;
+      .login-m {
+        font-size: 0.24rem;
+        background-color: rgba(255, 255, 255, 0.3);
+        width: 1.2rem;
+        height: 0.6rem;
+        line-height: 0.6rem;
+        padding: 0 0.2rem;
+        border-radius: 0.3rem;
+        color: #39404a;
+      }
+    }
+    .index-m-image {
+      position: fixed;
+      right: 5%;
+      top: 50%;
+      height: 45vh;
+      transform: translate(0, -50%);
+    }
+  }
+  .menu-mask {
+    position: fixed;
+    width: 50%;
+    top: 0;
+    left: -50%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 11;
+    padding: 0.2rem;
+    box-sizing: border-box;
+    animation: leave 0.5s;
+    .menu-list {
+      li {
+        margin: 0.2rem 0;
+        i {
+          display: inline-block;
+          color: #384e6f;
+          font-size: 0.3rem;
+          height: 0.4rem;
+          line-height: 0.4rem;
+          background-color: #fff;
+          padding: 0.06rem 0.15rem;
+          border-radius: 0.06rem;
+        }
+        span {
+          display: block;
+          font-size: 0.28rem;
+          color: #fff;
+          font-family: PingFang SC;
+          margin: 0.15rem 0;
+        }
+        div {
+          font-size: 0.22rem;
+          color: #fff;
+        }
+      }
+    }
+  }
+  .slider-action {
+    left: 0;
+    animation: move 0.5s;
+  }
+}
+
+@keyframes move {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes leave {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -50%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .index-container {
+    display: none;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    .index-header,
+    .index-texts,
+    .index-buttons,
+    .index-left {
+      display: none;
+      height: 0;
+      height: 0;
+      overflow: hidden;
+    }
+  }
+  .index-m-container {
+    display: block;
+  }
+}
+</style>
