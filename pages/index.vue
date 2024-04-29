@@ -40,7 +40,21 @@
         </div>
       </div>
 
-      <img src="../public/person.png" class="index-m-image" />
+      <img src="../public/logo2.png" class="m-logo" />
+
+      <div class="index-m-image">
+        <img src="../public/person.png" />
+        <img src="../public/m-text.png" class="m-text"/>
+        <img src="../public/layer0.png" class="m-layer"/>
+      </div>
+
+      <img src="../public/mask-text.png" class="mask-text"/>
+      
+
+      <div class="index-m-download">
+        <img src="../public/iphone-download.png" alt="苹果下载" />
+        <img src="../public/andorid-download.png" alt="安卓下载" />
+      </div>
     </div>
 
     <!--menu mask-->
@@ -53,6 +67,14 @@
           <div>{{ item.desc }}</div>
         </li>
       </ul>
+
+      <div class="mask-platfrom">
+        <img src="../public/vector.png" alt="bilibili"/>
+        <img src="../public/xinlang.png" alt="新浪微博"/>
+        <img src="../public/xiaohongshu.png" alt="小红书"/>
+        <img src="../public/wechat.png" alt="微信"/>
+        <img src="../public/douyin.png" alt="抖音"/>
+      </div>
     </div>
   </div>
 </template>
@@ -138,14 +160,15 @@ const hideSlider = (status: boolean) => {
     display: flex;
     flex-direction: column;
     img {
+      width:1.6rem;
       margin-bottom: 0.2rem;
       &:first-child {
-        margin-bottom: 0.9rem;
+        margin-bottom: 0.7rem;
       }
     }
     .index-qrcode {
-      width: 2rem;
-      height: 2rem;
+      width: 1.6rem;
+      height: 1.6rem;
       background-color: #aaa;
       border-radius: 0.1rem;
     }
@@ -175,8 +198,8 @@ const hideSlider = (status: boolean) => {
       display: block;
       color: #71758d;
       font-size: 0.36rem;
-      height: 0.5rem;
-      line-height: 0.5rem;
+      height: 0.4rem;
+      line-height: 0.4rem;
       border: 0.04rem solid rgba(70, 81, 142, 0.4);
       background-color: rgba(255, 255, 255, 0.65);
       padding: 0.1rem 0;
@@ -185,7 +208,7 @@ const hideSlider = (status: boolean) => {
       margin: 0 0.2rem;
       cursor: pointer;
       &:first-child {
-        border-radius: 0.25rem 0 0 0.25rem;
+        border-radius: 0.2rem 0 0 0.2rem;
       }
       &:last-child {
         border-radius: 0 0.25rem 0.25rem 0;
@@ -224,12 +247,51 @@ const hideSlider = (status: boolean) => {
         color: #39404a;
       }
     }
+    .mask-text {
+      position: fixed;
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      z-index: 1;
+    }
+    .m-logo {
+      position: absolute;
+      left: 0.2rem;
+      top: 2rem;
+      height: 1.2rem;
+    }
     .index-m-image {
       position: fixed;
       right: 5%;
       top: 50%;
       height: 45vh;
       transform: translate(0, -50%);
+      z-index: 10;
+      img {
+        height: 100%;
+      }
+      .m-text {
+        position: absolute;
+        height: 1rem;
+        left: -1.3rem;
+        bottom: 1.3rem;
+      }
+      .m-layer {
+        position: absolute;
+        right: 0;
+        top: 45vh;
+        width: 4.8rem;
+      }
+    }
+    .index-m-download {
+      position: absolute;
+      bottom: 0.3rem;
+      left: 0.2rem;
+      img {
+        display: block;
+        margin: 0.1rem 0;
+        width: 1rem;
+      }
     }
   }
   .menu-mask {
@@ -267,6 +329,20 @@ const hideSlider = (status: boolean) => {
           font-size: 0.22rem;
           color: #fff;
         }
+      }
+    }
+    .mask-platfrom {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      background-color: #000;
+      padding: 0.15rem;
+      justify-content: space-around;
+      box-sizing: border-box;
+      img {
+        height: 0.4rem;
       }
     }
   }
