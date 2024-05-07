@@ -19,6 +19,7 @@
 
 <style scoped lang="scss">
 .header-container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;

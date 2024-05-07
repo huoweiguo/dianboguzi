@@ -2,25 +2,12 @@
   <div class="concept-contanier">
     <div class="concept-bg">
     </div>
-    <div class="header-container">
-      <div class="logo-mobile">
-        <img src="../../public/logo.png" class="电波谷子"/>
-        <span>登录/注册</span>
-      </div>
-      <ul>
-        <li>首页</li>
-        <li>概率展示</li>
-        <li>新闻</li>
-        <li>兑换码</li>
-        <li>联系我们</li>
-      </ul>
-      <span></span>
-    </div>
+    <DHeader></DHeader>
     <div class="concept-left">
       <ul>
-        <li @click="setType(1)" class="left-item">柄图</li>
-        <li @click="setType(2)" class="left-item">电子谷子</li>
-        <li @click="setType(3)" class="left-item">痛柜</li>
+        <li @click="setType(1)" class="left-item" :class="{active:type === 1}">柄图</li>
+        <li @click="setType(2)" class="left-item" :class="{active:type === 2}">电子谷子</li>
+        <li @click="setType(3)" class="left-item" :class="{active:type === 3}">痛柜</li>
       </ul>
     </div>
     <div class="concept-right">
@@ -45,7 +32,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-const type = ref<number>(3)
+const type = ref<number>(2)
   const setType = (num: number) => {
     type.value = num
   }
@@ -66,37 +53,6 @@ const type = ref<number>(3)
     background: url('../../public/concept.png') no-repeat 100% 100%;
     background-size: 100% 100%;
   }
-  .header-container {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 70px;
-      z-index: 10;
-      .logo-mobile {
-        display: flex;
-        align-items: center;
-        img {
-          width: 60px;
-        }
-        span {
-          width: 110px;
-          display: block;
-          font-size: 18px;
-          text-align: center;
-          font-weight: 300;
-        }
-      }
-      ul {
-        display: flex;
-        li {
-          width: 110px;
-          font-size: 18px;
-          text-align: center;
-          font-weight: 300;
-        }
-      }
-  }
   .concept-left{
     position: absolute;
     left: 1.1rem;
@@ -106,6 +62,9 @@ const type = ref<number>(3)
       font-size: 0.36rem;
       margin-bottom: 1rem;
       cursor: pointer;
+    }
+    .active{
+      color:#6960A7;
     }
   }
   .concept-right{
