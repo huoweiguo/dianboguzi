@@ -109,6 +109,7 @@ const pushUrl = () => {
   .latest-img{
     width: 11rem;
     height: 2rem;
+    max-width: 90%;
   }
   .latest-item{
     cursor: pointer;
@@ -118,6 +119,7 @@ const pushUrl = () => {
     font-size: 0.31rem;
     background: #fff;
     width: 11rem;
+    max-width: 90%;
     height: 1.21rem;
     line-height: 1.21rem;
     padding: 0 0.6rem;
@@ -130,17 +132,26 @@ const pushUrl = () => {
   }
   .latest-more{
     width: 11rem;
+    max-width: 90%;
     cursor: pointer;
     text-align: center;
     font-size: 0.22rem;
   }
   .latest-list{
+    width: 100%;
     height: 78vh;
     overflow-y: auto;
+    ul{
+      width: 90%;
+    }
   }
   .join-list{
+    width: 100%;
     height: 78vh;
     overflow-y: auto;
+    ul{
+      width: 90%;
+    }
   }
   .join-item{
     cursor: pointer;
@@ -150,6 +161,7 @@ const pushUrl = () => {
     font-size: 0.31rem;
     background: #fff;
     width: 11rem;
+    max-width: 100%;
     height: 1.21rem;
     padding: 0 0.6rem;
     box-sizing: border-box;

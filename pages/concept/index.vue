@@ -79,9 +79,9 @@ const type = ref<number>(2)
     display: flex;
   }
   .right-dzgz-img1{
-    width: 4.3rem;
+    width: 4rem;
     max-width: 4.87rem;
-    height: 7.86rem;
+    height: 7.56rem;
   }
   .right-dzgz-box{
     width: 55%;
@@ -89,11 +89,11 @@ const type = ref<number>(2)
     margin-bottom: 0.3rem;
   }
   .right-dzgz-img2{
-    width: 7rem;
-    height: 7rem;
+    width: 6.5rem;
+    height: 6.5rem;
   }
   .right-dzgz-text{
-    width: 6.8rem;
+    width: 6.3rem;
     height: 1.72rem;
     border: 0.01rem solid #333;
     margin-top: -0.6rem;

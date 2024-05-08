@@ -89,6 +89,7 @@ const setType = (num: number) => {
   }
   .news-content{
     width: 11rem;
+    max-width: 90%;
     height: 7.72rem;
     border: 1px solid #ccc;
     background: #fff;
@@ -112,6 +113,7 @@ const setType = (num: number) => {
   .news-content2{
     width: 11rem;
     height: 7.72rem;
+    max-width: 90%;
     border: 1px solid #ccc;
     background: #fff;
     overflow-y: auto;
