@@ -4,10 +4,10 @@
     <div class="code-form">
       <p class="code-form-title">线下兑换码</p>
       <div class="verify-login">
-        <div class="form-ipt"><p>谷子编号</p><input type="text"/></div>
-        <div class="form-ipt"><p>兑换码</p><input type="text"/></div>
+        <div class="form-ipt"><p>谷子编号</p><input v-model="form.number" type="text"/></div>
+        <div class="form-ipt"><p>兑换码</p><input v-model="form.code" type="text"/></div>
       </div>
-      <div class="form-btn">
+      <div @click="subForm()" class="form-btn">
         <span>兑换</span>
       </div>
     </div>
@@ -32,6 +32,14 @@
 </template>
 
 <script setup lang="ts">
+import { ref,reactive} from 'vue';
+const form = reactive({
+  code:'',
+  number:''
+})
+const subForm = () => {
+  console.log(form,'form')
+}
 </script>
 
 <style lang="scss" scoped>
