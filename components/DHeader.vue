@@ -48,4 +48,9 @@
     }
   }
 }
+@media screen and (max-width: 750px){
+  .header-container {
+    display: none !important;
+  }
+}
 </style>
