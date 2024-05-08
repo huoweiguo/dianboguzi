@@ -3,7 +3,7 @@
     <div class="concept-bg">
     </div>
     <DHeader></DHeader>
-    <div class="news-left">
+    <div class="news-detail-left">
       <ul>
         <li @click="setType(1)" class="left-item" :class="{active:type === 1}">最新</li>
         <li @click="setType(2)" class="left-item" :class="{active:type === 2}">线上活动</li>
@@ -11,7 +11,7 @@
         <li @click="setType(4)" class="left-item" :class="{active:type === 4}">加入我们</li>
       </ul>
     </div>
-    <div class="news-right">
+    <div class="news-detail-right">
       <div v-if="type === 1" class="news-content">
         <h3>cp30参展决定！</h3>
         <p class="news-content-date">2024/01/15</p>
@@ -64,7 +64,7 @@ const setType = (num: number) => {
     background: url('../../public/concept.png') no-repeat 100% 100%;
     background-size: 100% 100%;
   }
-  .news-left{
+  .news-detail-left{
     position: absolute;
     left: 1.1rem;
     top: 1.7rem;
@@ -81,7 +81,7 @@ const setType = (num: number) => {
       color:#6960A7;
     }
   }
-  .news-right{
+  .news-detail-right{
     position: relative;
     width: 78%;
     margin-left: 22%;
