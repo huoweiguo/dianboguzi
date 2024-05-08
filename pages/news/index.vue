@@ -55,7 +55,7 @@ import { useRoute,useRouter } from 'vue-router'
 const route = useRoute()
 const router = useRouter()
 const show = ref<boolean>(false)
-const type = ref<number>(Number(route.query.type) || 0 )
+const type = ref<number>(Number(route.query.type) || 1 )
 const setShow = (bol: boolean) => {
   show.value = bol
 }
@@ -92,6 +92,9 @@ const pushUrl = () => {
       font-size: 0.36rem;
       margin-bottom: 1rem;
       cursor: pointer;
+      &:hover{
+        color:#6960A7;
+      }
     }
     .active{
       color:#6960A7;

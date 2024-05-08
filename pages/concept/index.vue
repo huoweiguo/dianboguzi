@@ -62,6 +62,9 @@ const type = ref<number>(2)
       font-size: 0.36rem;
       margin-bottom: 1rem;
       cursor: pointer;
+      &:hover{
+        color:#6960A7;
+      }
     }
     .active{
       color:#6960A7;

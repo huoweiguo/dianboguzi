@@ -43,7 +43,7 @@ import { ref } from 'vue';
 import { useRoute,useRouter } from 'vue-router'
 const route = useRoute()
 const router = useRouter()
-const type = ref<number>(Number(route.query.type))
+const type = ref<number>(Number(route.query.type) || 1)
 const setType = (num: number) => {
   router.push(`/news?type=${num}`)
   }
@@ -73,6 +73,9 @@ const setType = (num: number) => {
       font-size: 0.36rem;
       margin-bottom: 1rem;
       cursor: pointer;
+      &:hover{
+        color:#6960A7;
+      }
     }
     .active{
       color:#6960A7;
