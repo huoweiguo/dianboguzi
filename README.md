@@ -9,8 +9,8 @@ This project was bootstrapped with ([https://nuxt.com/](https://nuxt.com/)).
 In the project directory, you can run:
 
 
-cd dianboguzi
-npm install
+#### cd dianboguzi
+#### npm install
 
 ### `npm run dev`
 
