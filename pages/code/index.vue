@@ -4,8 +4,8 @@
     <div class="code-form">
       <p class="code-form-title">线下兑换码</p>
       <div class="verify-login">
-        <div class="form-ipt"><p>谷子编号</p><input type="text"/></div>
-        <div class="form-ipt"><p>兑换码</p><input type="text"/></div>
+        <div class="form-ipt"><label>谷子编号</label><input type="text"/></div>
+        <div class="form-ipt"><label>兑换码</label><input type="text"/></div>
       </div>
       <div class="form-btn">
         <span>兑换</span>
@@ -18,11 +18,7 @@
     </div>
 
     <div class="m-code-header">
-      <span>返回首页</span>
-      <div class="m-code-header-user">
-        <span class="m-code-header-name">欢迎您,夏至理想</span>
-        <span>退出登陆</span>
-      </div>
+      <MenuSlider />
     </div>
 
     <div class="m-code-logo">
@@ -69,7 +65,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        p{
+        label{
           text-align: right;
           width: 70px;
           margin-right: 10px;
@@ -147,23 +143,24 @@
         font-weight: bold;
       }
       .verify-login {
+        width: 5rem;
         font-size: 0.24rem;
         .form-ipt {
+          width: 100%;
           font-size: 14px;
           font-weight: 300;
           text-align: left;
-          width: 60%;
           margin: 0 auto 0;
           display: flex;
           justify-content: space-between;
           align-items: center;
-          p{
+          label {
             text-align: right;
-            width: 60px;
-            margin-right: 10px;
+            width: 1.2rem;
+            margin-right: 0.1rem;
+            font-size: 0.26rem;
           }
           input {
-            width: 100%;
             height: 0.68rem;
             background-color: #fff;
             outline: none;
@@ -215,7 +212,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.2rem 0.5rem;
+      padding: 0.9rem 0.5rem;
       span {
         display: inline-block;
         padding: 0 0.2rem;
@@ -259,6 +256,8 @@
     font-size: 0.24rem;
     color: #727272;
     line-height: 1.5;
+    text-align: center;
+    font-weight: 300;
   }
 
 }

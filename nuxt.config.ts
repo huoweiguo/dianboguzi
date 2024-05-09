@@ -6,6 +6,9 @@ export default defineNuxtConfig({
       link: [{ href: '/_nuxt/public/reset.css', type: 'text/css', rel: 'stylesheet' }]
     }
   },
-
+  modules: ['nuxt-swiper'],
+  swiper: {
+    styleLang: 'css'
+  },
   devtools: { enabled: true }
 })

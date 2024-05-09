@@ -38,9 +38,6 @@
         </div>
       </div>
     </div>
-    <div class="">
-      <img src="" alt="">
-    </div>
 
     <!--menu mask-->
     <div class="menu-mask" :class="showSlider ? 'slider-action' : ''">

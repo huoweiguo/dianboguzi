@@ -303,8 +303,7 @@ const setActive = (flag: boolean) => {
             border: none;
             flex: 1;
             margin: 0.2rem 0 0.2rem 0.2rem;
-            border-radius: 0.08rem; 
-            padding: 0 0.2rem;
+            border-radius: 0.08rem;
             box-sizing: border-box;
           }
           span {
