@@ -6,11 +6,14 @@ This project was bootstrapped with ([https://nuxt.com/](https://nuxt.com/)).
 
 ## Available Scripts
 
-In the project directory, you can run:
+
 
 
 ### `cd dianboguzi`
+In the project directory
+
 ### `npm install`
+install dependencies modules
 
 ### `npm run dev`
 
