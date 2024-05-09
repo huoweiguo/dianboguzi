@@ -7,7 +7,7 @@
         <div class="form-ipt"><label>谷子编号</label><input type="text"/></div>
         <div class="form-ipt"><label>兑换码</label><input type="text"/></div>
       </div>
-      <div class="form-btn">
+      <div @click="subForm()" class="form-btn">
         <span>兑换</span>
       </div>
     </div>
@@ -28,6 +28,14 @@
 </template>
 
 <script setup lang="ts">
+import { ref,reactive} from 'vue';
+const form = reactive({
+  code:'',
+  number:''
+})
+const subForm = () => {
+  console.log(form,'form')
+}
 </script>
 
 <style lang="scss" scoped>

@@ -1,4 +1,5 @@
 <template>
+  <!--PC-->
   <div class="concept-contanier">
     <div class="concept-bg">
     </div>
@@ -27,18 +28,20 @@
         <img class="right-tg-img" src="../../public/concept_tg.png" alt="">
       </div>
     </div>
-
-    <!--mobile-->
-  <div class="index-m-container">
-    <div class="index-m-content">
-      <div class="index-m-menu">
+  </div>
+  <!--移动端-->
+  <div class="concept-m-container">
+    <div class="concept-m-content">
+      <div class="concept-m-menu">
         <img src="../../public/menu-silder.png" class="menu-silder" @click="hideSlider(true)" />
-        <div class="login-m">
+        <div class="concept-m">
           <span>登录 | 注册</span>
         </div>
       </div>
     </div>
-
+    <div class="concept-m-bg">
+      <img src="../../public/concept_bg.png" alt="">
+    </div>
     <!--menu mask-->
     <div class="menu-mask" :class="showSlider ? 'slider-action' : ''">
       <div class="menu-close"><img src="../../public/close.png" @click="hideSlider(false)" /></div>
@@ -49,7 +52,6 @@
           <div>{{ item.desc }}</div>
         </li>
       </ul>
-
       <div class="mask-platfrom">
         <img src="../../public/vector.png" alt="bilibili"/>
         <img src="../../public/xinlang.png" alt="新浪微博"/>
@@ -58,7 +60,6 @@
         <img src="../../public/douyin.png" alt="抖音"/>
       </div>
     </div>
-  </div>
   </div>
 </template>
 
@@ -170,26 +171,26 @@ import { ref,reactive} from 'vue';
   }
 }
 
-.index-m-container {
+.concept-m-container {
   display: none;
   padding-top: 0.5rem;
-  height: calc(100vh - 0.5rem);
   width: 100%;
+  min-height:calc(100vh - 0.5rem);
   background-image: linear-gradient(90deg, #b2d6fa 12%, #f8d3f8);
-  .index-m-content {
+  .concept-m-content {
     padding: 0.2rem;
     box-sizing: border-box;
     .menu-silder {
       display: block;
       height: 0.28rem;
     }
-    .index-m-menu {
+    .concept-m-menu {
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       height: 0.6rem;
-      .login-m {
+      .concept-m {
         font-size: 0.24rem;
         background-color: rgba(255, 255, 255, 0.3);
         width: 1.2rem;
@@ -200,51 +201,15 @@ import { ref,reactive} from 'vue';
         color: #39404a;
       }
     }
-    .mask-text {
-      position: fixed;
-      left: 0;
-      top: 50%;
-      transform: translate(0, -50%);
-      z-index: 1;
-    }
-    .m-logo {
-      position: absolute;
-      left: 0.2rem;
-      top: 2rem;
-      height: 1.2rem;
-    }
-    .index-m-image {
-      position: fixed;
-      right: 5%;
-      top: 50%;
-      height: 45vh;
-      transform: translate(0, -50%);
-      z-index: 10;
-      img {
-        height: 100%;
-      }
-      .m-text {
-        position: absolute;
-        height: 1rem;
-        left: -1.3rem;
-        bottom: 1.3rem;
-      }
-      .m-layer {
-        position: absolute;
-        right: 0;
-        top: 45vh;
-        width: 4.8rem;
-      }
-    }
-    .index-m-download {
-      position: absolute;
-      bottom: 0.3rem;
-      left: 0.2rem;
-      img {
-        display: block;
-        margin: 0.1rem 0;
-        width: 1rem;
-      }
+  }
+  .concept-m-bg{
+    width: 100%;
+    height: 100%;
+    padding:5%;
+    box-sizing: border-box;
+    img{
+      width: 100%;
+      height: 100%;
     }
   }
   .menu-mask {
@@ -325,17 +290,17 @@ import { ref,reactive} from 'vue';
 
 @media screen and (max-width: 750px){
   .concept-contanier {
-    .concept-bg{
-      display: none;
-    }
-    .concept-left{
-      display: none;
-    }
+    display: none;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    .concept-bg,
+    .concept-left,
     .concept-right{
       display: none;
     }
   }
-  .index-m-container{
+  .concept-m-container{
     display: block;
   }
   
