@@ -19,12 +19,7 @@
   <!--移动端-->
   <div class="contactUs-m-container">
     <div class="contactUs-m-content">
-      <div class="contactUs-m-menu">
-        <img src="../../public/menu-silder.png" class="menu-silder" @click="hideSlider(true)" />
-        <div class="contactUs-m">
-          <span>登录 | 注册</span>
-        </div>
-      </div>
+      <MenuSlider />
       <div class="contactUs-m-img">
         <img src="../../public/contactUs_img.png" alt="">
       </div>
@@ -146,23 +141,6 @@ const hideSlider = (status: boolean) => {
     .menu-silder {
       display: block;
       height: 0.28rem;
-    }
-    .contactUs-m-menu {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 0.6rem;
-      .contactUs-m {
-        font-size: 0.24rem;
-        background-color: rgba(255, 255, 255, 0.3);
-        width: 1.2rem;
-        height: 0.6rem;
-        line-height: 0.6rem;
-        padding: 0 0.2rem;
-        border-radius: 0.3rem;
-        color: #39404a;
-      }
     }
     .contactUs-m-img{
       width: 100%;

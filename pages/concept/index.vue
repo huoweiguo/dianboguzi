@@ -32,12 +32,7 @@
   <!--移动端-->
   <div class="concept-m-container">
     <div class="concept-m-content">
-      <div class="concept-m-menu">
-        <img src="../../public/menu-silder.png" class="menu-silder" @click="hideSlider(true)" />
-        <div class="concept-m">
-          <span>登录 | 注册</span>
-        </div>
-      </div>
+      <MenuSlider />
     </div>
     <div class="concept-m-bg">
       <img src="../../public/concept_bg.png" alt="">
@@ -183,23 +178,6 @@ import { ref,reactive} from 'vue';
     .menu-silder {
       display: block;
       height: 0.28rem;
-    }
-    .concept-m-menu {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 0.6rem;
-      .concept-m {
-        font-size: 0.24rem;
-        background-color: rgba(255, 255, 255, 0.3);
-        width: 1.2rem;
-        height: 0.6rem;
-        line-height: 0.6rem;
-        padding: 0 0.2rem;
-        border-radius: 0.3rem;
-        color: #39404a;
-      }
     }
   }
   .concept-m-bg{

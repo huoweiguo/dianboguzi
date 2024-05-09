@@ -195,16 +195,6 @@ useSeoMeta({
       justify-content: space-between;
       align-items: center;
       height: 0.6rem;
-      .login-m {
-        font-size: 0.24rem;
-        background-color: rgba(255, 255, 255, 0.3);
-        width: 1.2rem;
-        height: 0.6rem;
-        line-height: 0.6rem;
-        padding: 0 0.2rem;
-        border-radius: 0.3rem;
-        color: #39404a;
-      }
     }
     .mask-text {
       position: fixed;
