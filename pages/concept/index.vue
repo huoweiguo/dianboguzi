@@ -4,28 +4,30 @@
     <div class="concept-bg">
     </div>
     <DHeader></DHeader>
-    <div class="concept-left">
-      <ul>
-        <li @click="setType(1)" class="left-item" :class="{active:type === 1}">柄图</li>
-        <li @click="setType(2)" class="left-item" :class="{active:type === 2}">电子谷子</li>
-        <li @click="setType(3)" class="left-item" :class="{active:type === 3}">痛柜</li>
-      </ul>
-    </div>
-    <div class="concept-right">
-      <div v-show="type === 2" class="concept-right-dzgz">
-        <img class="right-dzgz-img1" src="../../public/concept_dzgz1.png" alt="">
-        <div class="right-dzgz-box">
-          <img class="right-dzgz-img2" src="../../public/concept_dzgz2.png" alt="">
-          <div class="right-dzgz-text">
-            在平台抽卡可以获得谷美通过和已合成的电子谷子结合，装饰自己的电子谷子。
+    <div class="concept">
+      <div class="concept-left">
+        <ul>
+          <li @click="setType(1)" class="left-item" :class="{active:type === 1}">柄图</li>
+          <li @click="setType(2)" class="left-item" :class="{active:type === 2}">电子谷子</li>
+          <li @click="setType(3)" class="left-item" :class="{active:type === 3}">痛柜</li>
+        </ul>
+      </div>
+      <div class="concept-right">
+        <div v-show="type === 2" class="concept-right-dzgz">
+          <img class="right-dzgz-img1" src="../../public/concept_dzgz1.png" alt="">
+          <div class="right-dzgz-box">
+            <img class="right-dzgz-img2" src="../../public/concept_dzgz2.png" alt="">
+            <div class="right-dzgz-text">
+              在平台抽卡可以获得谷美通过和已合成的电子谷子结合，装饰自己的电子谷子。
+            </div>
           </div>
         </div>
-      </div>
-      <div v-show="type === 3" class="concept-right-tg">
-        <div class="right-tg-text">
-          平台给每位居民准备了痛柜进行展示可以根据自己的喜好装扮属于自己独一无二的痛柜。
+        <div v-show="type === 3" class="concept-right-tg">
+          <div class="right-tg-text">
+            平台给每位居民准备了痛柜进行展示可以根据自己的喜好装扮属于自己独一无二的痛柜。
+          </div>
+          <img class="right-tg-img" src="../../public/concept_tg.png" alt="">
         </div>
-        <img class="right-tg-img" src="../../public/concept_tg.png" alt="">
       </div>
     </div>
   </div>
@@ -35,7 +37,7 @@
       <MenuSlider />
     </div>
     <div class="concept-m-bg">
-      <img src="../../public/concept_bg.png" alt="">
+      <img src="../../public/concept_bg.jpg" alt="">
     </div>
     <!--menu mask-->
     <div class="menu-mask" :class="showSlider ? 'slider-action' : ''">
@@ -93,10 +95,18 @@ import { ref,reactive} from 'vue';
     background: url('../../public/concept.png') no-repeat 100% 100%;
     background-size: 100% 100%;
   }
+  .concept{
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+  }
   .concept-left{
-    position: absolute;
-    left: 1.1rem;
-    top: 1.7rem;
+    width: 22%;
+    box-sizing: border-box;
+    padding-top: 60px;
+    // position: absolute;
+    // left: 1.1rem;
+    // top: 1.7rem;
     .left-item{
       text-align: center;
       font-size: 0.36rem;
@@ -113,27 +123,31 @@ import { ref,reactive} from 'vue';
   .concept-right{
     position: relative;
     width: 78%;
-    margin-left: 22%;
+    box-sizing: border-box;
   }
   .concept-right-dzgz{
+    width: 100%;
     display: flex;
   }
   .right-dzgz-img1{
     width: 4rem;
-    max-width: 4.87rem;
-    height: 7.56rem;
+    max-width: 40%;
+    // max-width: 4.87rem;
+    // height: 7.56rem;
   }
   .right-dzgz-box{
-    width: 55%;
+    width: 60%;
     margin-left: 0.1rem;
     margin-bottom: 0.3rem;
   }
   .right-dzgz-img2{
     width: 6.5rem;
-    height: 6.5rem;
+    max-width: 95%;
+    // height: 6.5rem;
   }
   .right-dzgz-text{
     width: 6.3rem;
+    max-width: 95%;
     height: 1.72rem;
     border: 0.01rem solid #333;
     margin-top: -0.6rem;
@@ -142,6 +156,11 @@ import { ref,reactive} from 'vue';
     padding: 0.40rem 0.40rem;
     box-sizing: border-box;
     line-height: 1.5;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .concept-right-tg{
     width: 100%;
@@ -151,7 +170,8 @@ import { ref,reactive} from 'vue';
   }
   .right-tg-text{
     width: 8.9rem;
-    height: 1.72rem;
+    max-width: 90%;
+    min-height: 1.72rem;
     border: 0.01rem solid #333;
     background: #fff;
     font-size:0.3rem;
